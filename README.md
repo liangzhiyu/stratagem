@@ -1,92 +1,157 @@
-# stratagem
+# stratagem.skill
 
-A strategy-analysis AgentSkill for messy human situations: negotiation, competition, positioning, conflict management, power asymmetry, and tactical decision-making.
+> “不是教你耍狠，
+> 是帮你在复杂局面里，看清棋盘，找到那一步。”
 
-This skill blends several classic strategy traditions into a single practical framework:
-- **Sun Tzu / 孙子兵法**
-- **Thirty-Six Stratagems / 三十六计**
-- **The Prince / 君主论**
-- **Selected Mao-era strategic thinking / 毛选**
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![AgentSkill](https://img.shields.io/badge/AgentSkills-Standard-7AD03A)
+![Strategy](https://img.shields.io/badge/Focus-Strategy-6E56CF)
+![Chinese](https://img.shields.io/badge/Language-ZH--CN-1677FF)
 
-The goal is not to flood the user with generic advice.
-The goal is to identify **the main contradiction**, choose **one primary stratagem**, and explain **how to execute it**.
+---
 
-## What this skill does
+你是否遇到过这种情况：
 
-When triggered, `stratagem` helps analyze situations such as:
-- negotiation deadlocks
-- office politics
-- competitive positioning
-- signaling and reputation management
-- alliance building
-- pressure and counter-pressure
-- conflict de-escalation or indirect advantage
-- turning weakness into leverage
+- 一件事表面上在吵，真正的矛盾却不在台面上
+- 对方看起来在谈合作，本质上却在试探你的底线
+- 你知道不能硬碰硬，但又不知道该绕到哪里去赢
+- 你不缺道理，缺的是 **看清局势后的那一步**
 
-## Output style
+**stratagem** 就是为这种局面准备的。
 
-This skill is designed to respond with a compact structure:
+它不是给你一堆泛泛建议。
+它会尽量帮你做这几件事：
 
-1. **局势判断** — what is actually happening
-2. **核心矛盾** — the main contradiction
-3. **主计** — the single best stratagem
-4. **为什么是这一计** — why it fits
-5. **怎么落地** — concrete next move
-6. **风险提醒** — downside / likely counter-move
+- 看清局势表层之下真正的结构
+- 找到核心矛盾和 leverage point
+- 从多个策略传统里抽出 **一个主计**
+- 告诉你为什么是这一计，以及下一步怎么落地
 
-## References bundled
+---
 
-The skill includes these reference texts under `references/`:
-- `孙子兵法.md`
-- `36计.md`
-- `君主论.md`
-- `毛选.md`
+## 它是什么
 
-They are used selectively depending on the situation.
+`stratagem` 是一个偏 **策略分析 / 局势判断 / 谈判博弈** 的 AgentSkill。
 
-## Safety boundary
+它融合了几套不同风格的策略材料：
 
-This skill is intended for:
-- ordinary negotiation
-- competition
-- positioning
-- strategic judgment
-- conflict management
+- **孙子兵法**：势、虚实、谋攻、知彼知己
+- **三十六计**：借势、诱导、转移、反转、脱困
+- **君主论**：权力维持、名望管理、现实判断
+- **毛选（节选思路）**：矛盾分析、阶段判断、以弱胜强
 
-It is **not** intended for:
-- violent wrongdoing
-- abuse or coercion
-- stalking or harassment
-- fraud or criminal evasion
-- exploitative manipulation of vulnerable people
+它关心的不是“正确废话”，而是：
 
-## Installation
+> **这个局面真正卡在哪？**
+> **你现在最该出的，到底是哪一招？**
 
-Place this folder under a skills directory, for example:
+---
+
+## 它适合什么场景
+
+适合这些问题：
+
+- 谈判僵局怎么破
+- 对方到底在打什么算盘
+- 职场博弈里怎么拿主动权
+- 竞争对手在释放什么信号
+- 一个复杂局面，先打哪一点最有效
+- 要不要硬碰、要不要拖、要不要绕、要不要借力
+
+一句话：
+
+**当问题已经不是“怎么做事”，而是“怎么在复杂关系和约束里推进事情”时，它就有用。**
+
+---
+
+## 它怎么输出
+
+默认会尽量按这个结构来回答：
+
+1. **局势判断** — 事情表面和实质分别是什么
+2. **核心矛盾** — 真正决定成败的那条线
+3. **主计** — 只给一个最值得执行的策略
+4. **为什么是这一计** — 为什么它贴合这个局面
+5. **怎么落地** — 下一步怎么做，不空谈
+6. **风险提醒** — 对方可能怎么反制，代价是什么
+
+它的原则不是“多”，而是“准”。
+
+---
+
+## 它不会做什么
+
+这个 skill 不是给暴力、骚扰、欺骗、犯罪规避之类场景准备的。
+
+它更适合：
+
+- 普通竞争
+- 合法谈判
+- 冲突管理
+- 组织策略
+- 关系判断
+- 舆论与定位分析
+
+边界很简单：
+
+**可以讲策略，不帮你越线。**
+
+---
+
+## 目录结构
+
+```bash
+stratagem/
+├── SKILL.md
+├── README.md
+└── references/
+    ├── 孙子兵法.md
+    ├── 36计.md
+    ├── 君主论.md
+    └── 毛选.md
+```
+
+---
+
+## 怎么安装
+
+把它放进你的 skills 目录里：
 
 ```bash
 skills/stratagem/
 ```
 
-The required entrypoint is:
+入口文件是：
 
 ```bash
 skills/stratagem/SKILL.md
 ```
 
-## Example prompts
+---
 
-- “帮我分析一下这个局面”
-- “这件事用孙子兵法怎么解”
-- “36计里哪一计最合适”
-- “对方在打什么算盘”
-- “给我一个最狠但最稳的策略”
-- “这件事的破局点在哪”
+## 示例提问
 
-## Philosophy
+- 帮我分析一下这个局面
+- 这件事用孙子兵法怎么解
+- 36计里哪一计最适合现在
+- 对方到底在打什么算盘
+- 给我一个最狠但最稳的策略
+- 这件事的破局点在哪
+- 现在该正面推进，还是绕一下再打
 
-This skill assumes that the best strategy is usually not the loudest move, but the move that:
-- sees the board clearly
-- acts on the real leverage point
-- preserves optionality
-- minimizes unnecessary frontal conflict
+---
+
+## 这个 skill 的核心气质
+
+不是热血。
+不是鸡汤。
+也不是“教你拿捏别人”。
+
+它更像一种冷静的能力：
+
+- 先把棋盘看清
+- 再识别矛盾
+- 最后只走那一步最值钱的棋
+
+如果你喜欢的不是空洞建议，而是 **局势感、节奏感、分寸感**，
+那它就是为你准备的。
